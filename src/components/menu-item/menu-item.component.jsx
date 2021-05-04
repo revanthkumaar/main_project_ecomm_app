@@ -22,4 +22,3 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 );
 
 export default withRouter(MenuItem);
-//higher order components take components as parameters and tranform
