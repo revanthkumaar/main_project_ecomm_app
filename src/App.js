@@ -23,12 +23,15 @@ const TopicsList = props => {
   return(
     <div>
     <h1>topics list</h1>
+
+    
     <Link to={`${props.match.url}/covid19`}>Increased cases in India</Link>
     <Link to={`${props.match.url}/sars20`}>sars</Link>
     <Link to={`${props.match.url}/malaria`}>malaria</Link>
   </div>
   )
   
+
 };
 
 function App() {
@@ -38,6 +41,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/topics' component={TopicsList} />
         <Route path='/topics/:topicId' component={TopicDetail}/>
+        
       </Switch>
     </div>
   );
