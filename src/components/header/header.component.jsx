@@ -31,13 +31,13 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
-      <Cart currentUser={currentUser}/>
+      
     </div>
   </div>
 );
 
 
-const mapStateToProps = () => ({
+const mapStateToProps = state => ({
   currentUser: state.user.currentUser
 })
 
