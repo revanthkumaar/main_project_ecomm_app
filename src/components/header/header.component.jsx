@@ -43,7 +43,7 @@ const mapStateToProps = state => ({
 
 
 
-export default connect()(Header);
+export default connect(mapStateToProps)(Header);
 
 
 //connect is a higher order component that takes in a component and gives back an enriched 
