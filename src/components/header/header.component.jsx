@@ -7,6 +7,9 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
+//redux
+import {connect} from 'react-redux'
+
 const Header = ({ currentUser }) => (
   <div className='header'>
     <Link className='logo-container' to='/'>
@@ -28,8 +31,20 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
+      <Cart currentUser={currentUser}/>
     </div>
   </div>
 );
 
-export default Header;
+
+const mapStateToProps = () => ({
+  currentUser: state.user.currentUser
+})
+
+
+
+export default connect()(Header);
+
+
+//connect is a higher order component that takes in a component and gives back an enriched 
+//version of the same component 
