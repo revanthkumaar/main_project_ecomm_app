@@ -1,18 +1,10 @@
 import React from 'react';
-//routers
 import { Link } from 'react-router-dom';
-//higher order component to map my comp to state/dispatch
 import { connect } from 'react-redux';
-//authentication 
+
 import { auth } from '../../firebase/firebase.utils';
-//cart components 
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
-//importing all the selectors to reduce the data to this component
-import {createStructuredSelector} from 'reselect';
-import {selectCartHidden} from '../../redux/cart/cart.selectors'
-import {selectCurrentUser} from '../../redux/user/user.selectors'
-
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -45,9 +37,9 @@ const Header = ({ currentUser, hidden }) => (
   </div>
 );
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  hidden: selectCartHidden
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden
 });
 
 export default connect(mapStateToProps)(Header);
